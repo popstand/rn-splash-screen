@@ -37,7 +37,7 @@ RCT_EXPORT_MODULE(SplashScreen)
 + (void)show:(RCTRootView *)v {
     rootView = v;
     rootView.loadingViewFadeDelay = 0.0;
-    rootView.loadingViewFadeDuration = 1.3;
+    rootView.loadingViewFadeDuration = 0.75;
     UIImageView *view = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     NSString* launchFn = [RCTSplashScreen splashImageNameForOrientation];
     view.image = [UIImage imageNamed:launchFn];
