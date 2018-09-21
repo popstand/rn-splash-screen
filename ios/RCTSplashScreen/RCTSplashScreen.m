@@ -37,7 +37,7 @@ RCT_EXPORT_MODULE(SplashScreen)
 + (void)show:(RCTRootView *)v {
     rootView = v;
     rootView.loadingViewFadeDelay = 0.0;
-    rootView.loadingViewFadeDuration = 0.75;
+    rootView.loadingViewFadeDuration = 0.45;
     UIImageView *view = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     NSString* launchFn = [RCTSplashScreen splashImageNameForOrientation];
     view.image = [UIImage imageNamed:launchFn];
@@ -57,7 +57,7 @@ RCT_EXPORT_METHOD(hide) {
                    ^{
                      [UIView animateWithDuration:rootView.loadingViewFadeDuration
                                      animations:^{
-                                         rootView.loadingView.transform = CGAffineTransformMakeScale(1.8, 1.8);
+                                         rootView.loadingView.transform = CGAffineTransformMakeScale(1.45, 1.45);
                                          rootView.loadingView.alpha = 0;
                                      } completion:^(__unused BOOL finished) {
                                          [rootView.loadingView removeFromSuperview];
