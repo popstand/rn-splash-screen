@@ -70,7 +70,11 @@ public class SplashScreen {
      * Close the active splash screen.
      */
     public static void hide(Activity activity) {
-        if (activity == null) activity = mActivity.get();
+        if (activity == null) {
+            if (mActivity != null) {
+                activity = mActivity.get();
+            }
+        }
         if (activity == null) return;
 
         activity.runOnUiThread(new Runnable() {
